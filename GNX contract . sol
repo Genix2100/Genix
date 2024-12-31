@@ -1,0 +1,19 @@
+pragma solidity ^0.8.0;
+
+contract GENIXToken {
+    string public name = "GENIX Token";
+    string public symbol = "GNX";
+    uint256 public totalSupply = 29000000 * 10 ** 18;
+    mapping(address => uint256) public balances;
+
+    constructor() {
+        balances[msg.sender] = totalSupply;
+    }
+
+    function transfer(address to, uint256 amount) public returns (bool) {
+        require(balances[msg.sender] >= amount, "Insufficient balance");
+        balances[msg.sender] -= amount;
+        balances[to] += amount;
+        return true;
+    }
+}
