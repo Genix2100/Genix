@@ -1,0 +1,92 @@
+# GENIX Cryptocurrency Project
+
+## Overview
+The GENIX project is a decentralized blockchain initiative designed to withstand the test of time. It features a custom-built blockchain, a native cryptocurrency (GNX), a Web3-compatible wallet, and a smart contract. Built on a Proof of Work (PoW) mechanism, GENIX ensures robust security and decentralized operation.
+
+## Features
+- **Custom Blockchain**: Independent and secure blockchain with an encrypted genesis block message.
+- **Native Cryptocurrency (GNX)**: Total supply of 29,000,000 GNX, facilitating transactions on the GENIX network.
+- **Web3 Wallet**: Lightweight wallet for managing GNX balances and keys.
+- **Smart Contract**: Written in Solidity, enabling token functionality and integration with Web3 applications.
+
+## Vision
+The GENIX philosophy revolves around resilience and longevity, embodied in the genesis message: 
+
+> "The system will fail, but GENIX never will - 0000."
+
+## Repository Structure
+- `blockchain/`: Codebase for the GENIX blockchain, including mining and transaction handling.
+- `wallet/`: Scripts and utilities for creating and managing Web3-compatible wallets.
+- `smart_contract/`: Solidity code for the GNX token contract.
+- `docs/`: Additional documentation and whitepapers.
+
+## Requirements
+- **Python 3.x**
+- **Web3.py**
+- **Solidity Compiler (solc)**
+- **Node.js** (optional for advanced integrations)
+
+## Installation
+### Step 1: Clone the Repository
+```bash
+git clone https://github.com/Genix2100/Genix.git
+cd Genix
+```
+
+### Step 2: Install Dependencies
+```bash
+pip install -r wallet/requirements.txt
+```
+
+### Step 3: Compile the Smart Contract
+Ensure you have the Solidity compiler installed, then run:
+```bash
+solc --optimize --bin smart_contract/GNX_contract.sol -o build/
+```
+
+## Mining Instructions
+### Step 1: Initialize the Genesis Block
+Navigate to the `blockchain/` directory and run:
+```bash
+python genesis_block_creator.py
+```
+This will generate the first block of the GENIX blockchain.
+
+### Step 2: Start Mining
+Run the mining script:
+```bash
+python miner.py
+```
+This will validate transactions and add new blocks to the GENIX blockchain.
+
+## Wallet Usage
+### Create a Wallet
+Navigate to the `wallet/` directory and run:
+```bash
+python create_wallet.py
+```
+This will generate a public and private key pair for your GNX wallet.
+
+### Check Balance
+Use the `check_balance.py` script to view the balance of a wallet:
+```bash
+python check_balance.py --address YOUR_PUBLIC_KEY
+```
+
+### Send GNX
+Use the `send_gnx.py` script to transfer tokens:
+```bash
+python send_gnx.py --from YOUR_PRIVATE_KEY --to RECEIVER_PUBLIC_KEY --amount AMOUNT
+```
+
+## Smart Contract Deployment
+Deploy the GNX smart contract to a blockchain network using Remix or a similar tool. Once deployed, note the contract address for integration with wallets or dApps.
+
+## Contribution
+We welcome contributions from the community! Please fork the repository, make your changes, and submit a pull request.
+
+## License
+This project is open-source under the MIT License. See the LICENSE file for details.
+
+## Contact
+For questions or collaboration opportunities, reach out via GitHub or the project repository at [https://github.com/Genix2100/Genix](https://github.com/Genix2100/Genix).
